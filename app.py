@@ -40,3 +40,20 @@ def projects():
 @app.route('/about')
 def about():
 	return 'The about page'
+# doc_count = col.count_documents(filter, skip=skip)
+# results = col.find(filter).sort(sort).skip(skip).limit(limit)
+
+@app.route('/service/', methods=['GET','POST'], defaults={'email':None})
+@app.route('/service/<string:value>/',methods=['GET'])
+def service(value):
+	mainSite="http://test.base/"
+	site="http://test.base/service/"
+	if value == None or value == '':
+		if request.method == "GET":
+			return render_template('index.html', method=request.method, random=uuid.uuid4().hex.upper()[0:7].lower(), site=site, mainSite=mainSite)
+		else:
+			return render_template('post.html', message=message, method=request.method, value=value, status=status, site=site, mainSite=mainSite)
+	elif value == "api":
+		return render_template('api.html', site=site, mainSite=mainSite)
+	else:
+		return "Error!"
