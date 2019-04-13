@@ -43,7 +43,7 @@ def about():
 # doc_count = col.count_documents(filter, skip=skip)
 # results = col.find(filter).sort(sort).skip(skip).limit(limit)
 
-@app.route('/service/', methods=['GET','POST'], defaults={'email':None})
+@app.route('/service/', methods=['GET','POST'], defaults={'value':None})
 @app.route('/service/<string:value>/',methods=['GET'])
 def service(value):
 	mainSite="http://test.base/"
