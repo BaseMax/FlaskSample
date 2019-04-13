@@ -21,3 +21,10 @@ class flaskLocal(Flask):
 		return(response)
 
 app = flaskLocal(__name__)
+
+#app.config.SERVER_NAME = 'asrez.base:80'
+#app.config
+
+@app.route('/')
+def index():
+	return render_template('index.html')
