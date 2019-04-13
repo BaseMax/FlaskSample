@@ -57,3 +57,9 @@ def service(value):
 		return render_template('api.html', site=site, mainSite=mainSite)
 	else:
 		return "Error!"
+
+if __name__ == '__main__':
+	connection = MongoClient(MONGODB_HOST, MONGODB_PORT)
+	collectionLink = connection[DB_NAME][COLLECTION_LINK]
+	# app.run(host='test.base', port=80, debug=False)
+	app.run(port=80)
