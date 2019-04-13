@@ -11,4 +11,7 @@ from pymongo import MongoClient
 from bson import json_util
 from flask import redirect
 
-
+MONGODB_HOST = 'localhost'
+MONGODB_PORT = 27017
+DB_NAME = 'DB'
+COLLECTION_LINK="Service"
