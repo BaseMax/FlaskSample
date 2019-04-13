@@ -15,3 +15,9 @@ MONGODB_HOST = 'localhost'
 MONGODB_PORT = 27017
 DB_NAME = 'DB'
 COLLECTION_LINK="Service"
+
+class flaskLocal(Flask):
+	def process_response(self, response):
+		return(response)
+
+app = flaskLocal(__name__)
