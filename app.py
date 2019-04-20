@@ -52,7 +52,7 @@ def service(value):
 		if request.method == "GET":
 			return render_template('index.html', method=request.method, random=uuid.uuid4().hex.upper()[0:7].lower(), site=site, mainSite=mainSite)
 		else:
-			return render_template('post.html', message="Has been submit...", method=request.method, value=value, status=status, site=site, mainSite=mainSite)
+			return render_template('post.html', message="Has been submit...", method=request.method, value=value, status="post", site=site, mainSite=mainSite)
 	elif value == "api":
 		return render_template('api.html', site=site, mainSite=mainSite)
 	else:
